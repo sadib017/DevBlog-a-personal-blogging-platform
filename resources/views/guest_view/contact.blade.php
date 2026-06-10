@@ -1,0 +1,49 @@
+@extends('index')
+
+@section('content')
+    <div >
+        @if(session('success'))
+            <div class="success-message">{{ session('success') }}</div>
+        @endif
+        <form action="/contact" method="POST" class="contact-form">
+            @csrf
+            <input type="text" name="name" placeholder="Your Name" required><br>
+            <input type="email" name="email" placeholder="Your email" required><br>
+            <textarea name="query" placeholder="Your message" required></textarea><br>
+            <button type="submit">Send</button>
+        </form>
+    </div>
+
+@endsection
+
+<style>
+    .contact-form{
+        display: flex;
+        align-items: center;
+
+    }
+    input{
+        padding: 12px;
+        padding-top: 10px;
+        margin: 12px;
+    }
+    textarea{
+        padding: 12px;
+        margin: 12px;
+        padding-bottom: 10px;
+    }
+    button{
+        color: green;
+        border-radius: 8px;
+        cursor: pointer;
+        padding: 10px 20px;
+        font-size: 15px;
+        border-color: black;
+        transition: 0.3s ease;
+
+    }
+    button:hover{
+        background-color: black;
+        color: aqua
+    }
+</style>
