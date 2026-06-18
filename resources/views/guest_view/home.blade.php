@@ -8,6 +8,7 @@
         <p>Post Category: {{$post->category}}</p>
         <img src="{{$post->image_url}}">
         <p>{{$post->content}}</p>
+        <hr style="border: none; height: 1.2px; background-color: black;">
     </div>
     @endforeach
 

@@ -11,7 +11,11 @@
         <a href="{{route('home')}}">Home</a>
         <a href="#">Membership</a>
         <a href="{{route('contact')}}">Contact</a>
-        <a href="#">Sign in</a>
+        @guest
+            @unless(request()->routeIs('login'))
+                <a href="{{route('login')}}">Sign in</a>
+            @endunless
+        @endguest
         <a href="#">Get started</a>
     </div>
 
