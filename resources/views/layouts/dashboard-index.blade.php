@@ -9,14 +9,11 @@
 <body>
 
     {{-- navbar --}}
-    @include('components.navbar')
+    @include('components.dashboard-navbar')
 
     {{-- content body --}}
-    @yield('content')
+    @yield('dashboard-content')
 
-    {{-- footer --}}
-    @include('components.footer')
 
-    
 </body>
 </html>

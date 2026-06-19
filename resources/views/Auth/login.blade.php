@@ -2,11 +2,16 @@
 
 @section('content')
     <div>
-        <form class="login-form" action="{{route('login')}}" method="POST">
+        <form class="login-form" action="{{route('login.submit')}}" method="POST">
             <h2>Login</h2>
             @csrf
-            <input type="text" name="Username" placeholder="Username" required>
-            <input type="text" name="Password" placeholder="Password" required>
+            <input type="email" name="email" placeholder="Enter you email" required>
+
+            @error('email', 'msg')
+                <p style="color: red">{{$msg}}</p>
+
+            @enderror
+            <input type="text" minlength="8" name="password" placeholder="password" required>
             <button type="submit">login</button>
     </form>
     <div class="register-link">

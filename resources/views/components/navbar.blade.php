@@ -1,6 +1,6 @@
 <nav class="nav">
     <div class="nav-left">
-        <a href="#">DevBlog</a>
+        <a href="{{route('home')}}">DevBlog</a>
 
     <div class="search-bar">
         <span></span>
@@ -16,7 +16,7 @@
                 <a href="{{route('login')}}">Sign in</a>
             @endunless
         @endguest
-        <a href="#">Get started</a>
+        <a href="{{route('register')}}">Get started</a>
     </div>
 
 </nav>

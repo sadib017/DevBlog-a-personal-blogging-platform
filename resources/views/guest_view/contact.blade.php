@@ -3,9 +3,9 @@
 @section('content')
     <div >
         @if(session('success'))
-            <div class="success-message">{{ session('success') }}</div>
+            <div>{{ session('success') }}</div>
         @endif
-        <form action="/contact" method="POST" class="contact-form">
+        <form action="{{route('contact.store')}}" method="POST" class="contact-form">
             @csrf
             <input type="text" name="name" placeholder="Your Name" required><br>
             <input type="email" name="email" placeholder="Your email" required><br>

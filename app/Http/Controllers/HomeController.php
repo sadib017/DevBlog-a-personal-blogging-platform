@@ -18,9 +18,9 @@ class HomeController extends Controller
         return view('guest_view.contact', );
     }
 
-    public function contactInfoStore(Request $request){
-        contact::create([
-            'name'=> $request->name,    //column=>value
+    public function ContactInfoStore(Request $request){
+        Contact::create([
+            'name'=> $request->name,
             'email'=> $request->email,
             'query'=> $request->input('query'),
         ]);
