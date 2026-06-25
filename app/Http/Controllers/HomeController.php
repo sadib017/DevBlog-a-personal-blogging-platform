@@ -9,8 +9,7 @@ use Illuminate\Http\Request;
 class HomeController extends Controller
 {
     public function home(){
-
-    $posts = post::all();
+    $posts = Post::all();
     return view('guest_view.home', compact('posts'));
     }
 

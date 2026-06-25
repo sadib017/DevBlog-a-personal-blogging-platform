@@ -10,12 +10,12 @@ use Illuminate\Support\Facades\Auth;
 class AuthController extends Controller
 {
     public function register(){
-        return view('Auth.register');
+        return view('auth.register');
     }
 
-    public function StoreUserInfo(Request $request){
+    public function StoreUserInfo(Request $request){   // Registration
         $request->validate([
-            'name'      => 'required|string|max:255',
+            'name'      => 'required|string|max:255',   // User table column => required validation
             'email'     => 'required|email|unique:users',
             'password' => [
                 'required',
@@ -43,7 +43,7 @@ class AuthController extends Controller
     }
 
     public function login(){
-        return view('Auth.login', );
+        return view('auth.login', );
     }
 
     public function authenticate(Request $request){

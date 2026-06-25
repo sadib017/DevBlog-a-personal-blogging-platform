@@ -11,7 +11,7 @@
                 <p style="color: red">{{$msg}}</p>
 
             @enderror
-            <input type="text" minlength="8" name="password" placeholder="password" required>
+            <input type="password" minlength="8" name="password" placeholder="password" required >
             <button type="submit">login</button>
     </form>
     <div class="register-link">

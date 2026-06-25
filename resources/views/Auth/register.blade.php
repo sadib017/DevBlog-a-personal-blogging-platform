@@ -6,16 +6,26 @@
         @if (session('success'))
             <div>{{session('success')}}</div>
         @endif
+
         <form class="register-form" action="{{route('register.store')}}" method="POST">
             @csrf
+
+        @if ($errors->any())
+        <div style="color:red; margin-bottom:15px;">
+            @foreach ($errors->all() as $error)
+                <p>{{ $error }}</p>
+            @endforeach
+        </div>
+        @endif
+        
             <label>Name:</label>
             <input type="text" name="name" value="" required>
             <label>Email:</label>
             <input type="text" name="email" value="" required>
             <label>Password:</label>
-            <input type="text" name="password" value="" required minlength="8">
+            <input type="password" name="password" value="" required minlength="8">
             <label>Confirm Password:</label>
-            <input type="text" name="password_confirmation" value="" required>
+            <input type="password" name="password_confirmation" value="" required>
             <label>Profession:</label>
 
             <div class="radio-buttons">
