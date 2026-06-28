@@ -1,6 +1,10 @@
 <x-layout>
 
     <style>
+
+        body{
+            background-color: grey
+        }
         .profile-page {
             max-width: 760px;
             margin: 32px auto;
@@ -146,7 +150,7 @@
             @endforeach
         </div>
         @endif
-        
+
             <h3>Name: </h3>
             <input type="text" name="name" value="{{$user->name}}">
             <h3>Email: </h3>

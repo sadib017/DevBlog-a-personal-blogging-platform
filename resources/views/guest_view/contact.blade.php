@@ -17,6 +17,10 @@
 @endsection
 
 <style>
+
+    body{
+        background-color:grey
+    }
     .contact-form{
         display: flex;
         align-items: center;
@@ -33,7 +37,7 @@
         padding-bottom: 10px;
     }
     button{
-        color: green;
+        color: black;
         border-radius: 8px;
         cursor: pointer;
         padding: 10px 20px;
@@ -43,7 +47,8 @@
 
     }
     button:hover{
-        background-color: black;
-        color: aqua
+        background-color: #5cad44;
+        padding: 10px;
+        border: 1px solid #8a00c4;
     }
 </style>

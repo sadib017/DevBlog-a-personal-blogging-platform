@@ -1,4 +1,4 @@
-<x-layout>
+<x-layout title="">
     <style>
         .create-post-form {
             max-width: 520px;
@@ -81,7 +81,7 @@
         <form action="{{route('post.store')}}" method="POST" class="create-post-form">
             @csrf
             @method('post')
-            
+
             <input type="text" name="title" placeholder="post title" required><br>
             <input type="text" name="name" placeholder="author name" required><br>
             <input type="text" name="category" placeholder="post category" required><br>

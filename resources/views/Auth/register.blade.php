@@ -17,7 +17,7 @@
             @endforeach
         </div>
         @endif
-        
+
             <label>Name:</label>
             <input type="text" name="name" value="" required>
             <label>Email:</label>
@@ -178,10 +178,13 @@
         background: linear-gradient(135deg, #229954 0%, #1e8449 100%);
         box-shadow: 0 6px 20px rgba(39, 174, 96, 0.4);
         transform: translateY(-2px);
+        border: 1px solid black;
+
     }
 
     .register-form button:active {
         transform: translateY(0);
         box-shadow: 0 2px 10px rgba(39, 174, 96, 0.3);
     }
+
 </style>

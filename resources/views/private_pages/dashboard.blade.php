@@ -1,4 +1,5 @@
-<x-layout>
+<x-layout title="Dashboard">
+
     @foreach ($posts as $post)
         <div>
             <h2>{{$post->title}}</h2>
