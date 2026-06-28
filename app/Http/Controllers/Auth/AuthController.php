@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Auth;
 class AuthController extends Controller
 {
     public function register(){
-        return view('auth.register');
+        return view('Auth.register');
     }
 
     public function StoreUserInfo(Request $request){   // Registration
@@ -43,7 +43,7 @@ class AuthController extends Controller
     }
 
     public function login(){
-        return view('auth.login', );
+        return view('Auth.login', );
     }
 
     public function authenticate(Request $request){
