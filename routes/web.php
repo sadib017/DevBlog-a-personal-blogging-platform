@@ -9,6 +9,14 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [HomeController::class, 'home'])->name('home');
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 Route::get('/membership', [HomeController::class, 'membership'])->name('membership');
+Route::get('/help', [HomeController::class, 'help'])->name('help');
+Route::get('/status', [HomeController::class, 'status'])->name('status');
+Route::get('/about', [HomeController::class, 'about'])->name('about');
+Route::get('/careers', [HomeController::class, 'careers'])->name('careers');
+Route::get('/press', [HomeController::class, 'press'])->name('press');
+Route::get('/blog', [HomeController::class, 'blog'])->name('blog');
+Route::get('/store', [HomeController::class, 'store'])->name('store');
+Route::get('/privacy', [HomeController::class, 'privacy'])->name('privacy');
 Route::post('/contact', [HomeController::class, 'StoreContactInfo'])->name('contact.store');
 
 Route::get('/register', [AuthController::class, 'register'])->name('register');

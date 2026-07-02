@@ -1,13 +1,13 @@
 <footer class="site-footer">
     <div class="footer-links">
-        <a href="#">Help</a>
-        <a href="#">Status</a>
-        <a href="#">About</a>
-        <a href="#">Careers</a>
-        <a href="#">Press</a>
-        <a href="#">Blog</a>
-        <a href="#">Store</a>
-        <a href="#">Privacy</a>
+        <a href="{{ route('help') }}">Help</a>
+        <a href="{{ route('status') }}">Status</a>
+        <a href="{{ route('about') }}">About</a>
+        <a href="{{ route('careers') }}">Careers</a>
+        <a href="{{ route('press') }}">Press</a>
+        <a href="{{ route('blog') }}">Blog</a>
+        <a href="{{ route('store') }}">Store</a>
+        <a href="{{ route('privacy') }}">Privacy</a>
     </div>
     <p class="footer-copy">&copy; {{ date('Y') }} DevBlog. Crafted with care.</p>
 </footer>
