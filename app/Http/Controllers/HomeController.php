@@ -17,6 +17,10 @@ class HomeController extends Controller
         return view('guest_view.contact', );
     }
 
+    public function membership(){
+        return view('guest_view.membership');
+    }
+
     public function ContactInfoStore(Request $request){
         Contact::create([
             'name'=> $request->name,

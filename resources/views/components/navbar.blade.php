@@ -6,7 +6,7 @@
 
     <div class="nav-links">
         <a href="{{ route('home') }}">Home</a>
-        <a href="#">Membership</a>
+        <a href="{{ route('membership') }}">Membership</a>
         <a href="{{ route('contact') }}">Contact</a>
         @guest
             @unless(request()->routeIs('login'))

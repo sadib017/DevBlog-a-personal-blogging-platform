@@ -3,50 +3,52 @@
 @section('content')
 
     <div class="create-account">
-        @if (session('success'))
-            <div>{{session('success')}}</div>
-        @endif
+        <div class="register-card">
+            @if (session('success'))
+                <div class="success-message">{{ session('success') }}</div>
+            @endif
 
-        <form class="register-form" action="{{route('register.store')}}" method="POST">
-            @csrf
+            <form class="register-form" action="{{ route('register.store') }}" method="POST">
+                @csrf
 
-        @if ($errors->any())
-        <div style="color:red; margin-bottom:15px;">
-            @foreach ($errors->all() as $error)
-                <p>{{ $error }}</p>
-            @endforeach
+                @if ($errors->any())
+                    <div class="error-box">
+                        @foreach ($errors->all() as $error)
+                            <p>{{ $error }}</p>
+                        @endforeach
+                    </div>
+                @endif
+
+                <label>Name:</label>
+                <input type="text" name="name" value="" required>
+                <label>Email:</label>
+                <input type="text" name="email" value="" required>
+                <label>Password:</label>
+                <input type="password" name="password" value="" required minlength="8">
+                <label>Confirm Password:</label>
+                <input type="password" name="password_confirmation" value="" required>
+                <label>Profession:</label>
+
+                <div class="radio-buttons">
+                    <label><input type="radio" name="user_type" value="student">Student</label>
+                    <label><input type="radio" name="user_type" value="teacher">Teacher</label>
+                    <label><input type="radio" name="user_type" value="developer">Developer</label>
+                    <label><input type="radio" name="user_type" value="blogger">Blogger</label>
+                    <label><input type="radio" name="user_type" value="freelancer">Freelancer</label>
+                    <label><input type="radio" name="user_type" value="other">Other</label>
+                </div>
+
+                <div class="agree-terms">
+                    <label><input type="checkbox" name="agree_terms" required> Accept our privacy policy</label>
+                </div>
+
+                <button type="submit">Register</button>
+            </form>
+
+            <div class="already-registered">
+                <p>Already registered? <a href="{{ route('login') }}">Log in</a></p>
+            </div>
         </div>
-        @endif
-
-            <label>Name:</label>
-            <input type="text" name="name" value="" required>
-            <label>Email:</label>
-            <input type="text" name="email" value="" required>
-            <label>Password:</label>
-            <input type="password" name="password" value="" required minlength="8">
-            <label>Confirm Password:</label>
-            <input type="password" name="password_confirmation" value="" required>
-            <label>Profession:</label>
-
-            <div class="radio-buttons">
-                <label><input type="radio" name="user_type" value="student">Student</label>
-                <label><input type="radio" name="user_type" value="teacher">Teacher</label>
-                <label><input type="radio" name="user_type" value="developer">Developer</label>
-                <label><input type="radio" name="user_type" value="blogger">Blogger</label>
-                <label><input type="radio" name="user_type" value="freelancer">Freelancer</label>
-                <label><input type="radio" name="user_type" value="other">Other</label>
-            </div>
-
-            <div class="agree-terms">
-                <label><input type="checkbox" name="agree_terms" required> Accept our privacy policy</label>
-            </div>
-
-            <button type="submit">Register</button>
-
-        </form>
-    </div>
-    <div class="already-registered">
-        <p>Already registered? <a href="{{route('login')}}">Log in</a></p>
     </div>
 @endsection
 
@@ -67,13 +69,17 @@
         padding: 20px;
     }
 
-    .register-form {
+    .register-card {
+        width: 100%;
+        max-width: 450px;
         background: white;
         padding: 40px;
         border-radius: 12px;
         box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    }
+
+    .register-form {
         width: 100%;
-        max-width: 450px;
     }
 
     .register-form > label {
@@ -185,6 +191,48 @@
     .register-form button:active {
         transform: translateY(0);
         box-shadow: 0 2px 10px rgba(39, 174, 96, 0.3);
+    }
+
+    .already-registered {
+        margin-top: 16px;
+        text-align: center;
+    }
+
+    .already-registered p {
+        color: #555;
+        font-size: 14px;
+    }
+
+    .already-registered a {
+        color: #27ae60;
+        font-weight: 600;
+        text-decoration: none;
+    }
+
+    .already-registered a:hover {
+        text-decoration: underline;
+    }
+
+    .success-message,
+    .error-box {
+        margin-bottom: 15px;
+        padding: 10px 12px;
+        border-radius: 8px;
+        font-size: 14px;
+    }
+
+    .success-message {
+        background: #eafaf1;
+        color: #1e7f45;
+    }
+
+    .error-box {
+        background: #fdecea;
+        color: #c0392b;
+    }
+
+    .error-box p {
+        margin: 4px 0;
     }
 
 </style>

@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'home'])->name('home');
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
+Route::get('/membership', [HomeController::class, 'membership'])->name('membership');
 Route::post('/contact', [HomeController::class, 'StoreContactInfo'])->name('contact.store');
 
 Route::get('/register', [AuthController::class, 'register'])->name('register');
